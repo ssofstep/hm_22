@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Страница продукта{% endblock %}
+{% block content %}
+<body>
+    <h1>Информация о продукте</h1>
+    <p>Название: {{ product_name }}</p>
+    <p>Описание: {{ product_description }}</p>
+    <p>Изображение: <img src="/media/{{ product_image }}" alt="{{ product_name }}"></p>
+    <p>Категория: {{ product_category }}</p>
+    <p>Стоимость: {{ product_price }}</p>
+    <p>Дата создания: {{ product_created_at }}</p>
+    <p>Дата последнего изменения: {{ product_updated_at }}</p>
+</body>
+{% endblock %}
