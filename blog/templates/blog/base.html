@@ -3,17 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skystore</title>
+    <title>Blog</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"><!-- Подключите статичеcкие файлы со стилями Bootstrap -->
 
 </head>
 <body>
-{% include 'header.html' %}
+{% include 'blog/header.html' %}
+<a class="btn btn-primary d-flex justify-content-center mb-5" href="{% url 'blog:paper_create'%}" role="button">Написать статью</a>
 {% block content %}{% endblock %}
 <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
         <div class="col-12 col-md">
-            SkyStore
+            Blog
             <small class="d-block mb-3 text-muted">&copy; 2023</small>
         </div>
         <div class="col-6 col-md">
