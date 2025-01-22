@@ -29,9 +29,9 @@ class ContactsView(TemplateView):
     template_name = 'catalog/contacts.html'
 
 
-
 class ProductDetailView(DetailView):
     model = Product
+
 
 class ProductListView(ListView):
     model = Product
