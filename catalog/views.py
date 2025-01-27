@@ -16,6 +16,16 @@ class ProductCreateView(CreateView):
     template_name = 'catalog/product_form.html'
     success_url = reverse_lazy('catalog:product_list')
 
+    def get_initial(self):
+        initial = super().get_initial()
+        initial["owner"] = self.request.user
+        return initial
+
+    def form_valid(self, form):
+        form.instance.owner = self.request.user
+        return super().form_valid(form)
+
+
 
 class ProductUpdateView(LoginRequiredMixin, UpdateView):
     model = Product
