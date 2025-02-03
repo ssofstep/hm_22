@@ -8,6 +8,7 @@ from catalog.models import Product
 
 from catalog.forms import ProductForm, ProductModeratorForm
 from catalog.models import Product
+from catalog.services import get_product_from_cache
 
 
 class ProductCreateView(CreateView):
@@ -56,6 +57,9 @@ class ProductDetailView(DetailView):
 
 class ProductListView(ListView):
     model = Product
+
+    def get_queryset(self):
+        return get_product_from_cache()
 
 class ProductDeleteView(DeleteView):
     model = Product
